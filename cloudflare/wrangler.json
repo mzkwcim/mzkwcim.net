@@ -1,1 +1,13 @@
-{"name":"mzkwcim-contact-email","main":"email-worker.js","compatibility_date":"2026-11-12","send_email":[{"name":"EMAIL","destination_address":"wkrak98@gmail.com"}]}
+{
+  "name": "mzkwcim-contact-email",
+  "main": "email-worker.js",
+  "compatibility_date": "2026-11-12",
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "destination_address": "wkrak98@gmail.com"
+    }
+  ],
+  "workers_dev": false,
+  "preview_urls": false
+}
