@@ -10,9 +10,20 @@ Decision (2026-11-15): Google Privacy & messaging as CMP. Ads permitted **only o
 - Do not claim certified consent is live until verified in the actual account and in an EEA browser test.
 - Do not include a guessed publisher ID or seller entry in `ads.txt`.
 
+## Review state (reported 2026-11-15)
+
+The publisher reports the site as `review`, which needs confirmation of the precise AdSense UI label: **Requires review** means review has not been requested, whereas **Getting ready** means checks are in progress. Do not submit a duplicate review while checks are running.
+
+## Verification strategy (no ad serving)
+
+- Obtain the exact publisher ID from AdSense -> Account -> Settings -> Account information, or from the site connection instructions.
+- For ownership verification, use the exact `<meta name="google-adsense-account" content="ca-pub-REAL_ID">` tag from AdSense in the **root** `index.html` `<head>`; this tag is metadata, not an ad script. This is a site-level exception to the article-only *ad serving* policy.
+- After publishing, verify the tag is present on `https://mzkwcim.net/` and use **Verify** / **Request review** only when required by the displayed site status.
+- Do not add `adsbygoogle.js` globally. Google documentation for Privacy & messaging says the AdSense code must be present for the web message; defer Google CMP message publication/testing until the real publisher ID is supplied and the article-only code integration can be tested.
+
 ## Required account setup
 
-1. Create or connect AdSense publisher account and submit `mzkwcim.net` for review. Get actual publisher ID (`ca-pub-...`) from the account. Do not use a test or invented ID.
+1. Use the existing AdSense publisher account and confirm the exact approval state for `mzkwcim.net`. Get actual publisher ID (`ca-pub-...`) from the account. Do not use a test or invented ID.
 2. In AdSense -> Privacy & messaging, configure and publish a European regulations message, choosing Google CMP. Set appropriate consent/rejection/manage choices and vendor settings. Test in EEA/UK/Switzerland context with a clean browser. Verify actual TCF signal and preference reopen.
 3. After publisher approval, place verified `ads.txt` at the **domain root** using the exact authorized seller line from AdSense. Confirm HTTP 200 and plaintext response.
 4. **Only after 1-3**: integrate AdSense code explicitly into individually approved `/blog/<slug>/index.html` documents. Prefer manually placed ad units. Do **not** place global AdSense script in `assets/site.js`, shared HTML header/footer, `_headers`, or site-wide Cloudflare injection. Keep Auto ads disabled unless an explicit and fully tested exclusion policy covers all non-article pages and subdomains.
