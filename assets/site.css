@@ -33,13 +33,16 @@
   .footer .footlinks{display:flex;gap:12px 18px;line-height:1.4}
 }
 
-/* Evidence-led product screenshots */
-.project-shot-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start;margin:24px 0 20px}
-.project-shot{margin:0;min-width:0;overflow:hidden;border:1px solid #d5e2e8;background:#fff;border-radius:15px;box-shadow:0 12px 32px rgba(19,52,69,.07)}
-.project-shot img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;background:#102137}
-.project-shot figcaption{display:flex;flex-direction:column;gap:9px;padding:20px 22px 24px;color:#465e71;line-height:1.65}
-.project-shot figcaption strong{color:#183c4c;font-size:1.05rem;line-height:1.35}
-.project-shot figcaption span{font-size:.98rem}
-.project-shot-note{max-width:900px;margin:0 0 20px;color:#526879;font-size:.89rem;line-height:1.65}
-.project-shot-followup{margin:25px 0 0}
-@media(max-width:760px){.project-shot-grid{grid-template-columns:1fr;gap:20px}.project-shot figcaption{padding:18px}.project-shot figcaption span{font-size:.94rem}}
+/* Product screenshots: readable, contained, and without horizontal overflow */
+.project-shot-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:32px;width:100%;max-width:960px;margin:32px auto}
+.project-shot,.project-records-demo .project-shot{display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;margin:0;overflow:hidden;border:1px solid #d5e2e8;background:#fff;border-radius:14px;box-shadow:0 12px 30px rgba(19,52,69,.07)}
+.project-shot a.project-shot-link{display:block;width:100%;max-width:100%;overflow:hidden}
+.project-shot img,.project-records-demo .project-shot img{display:block;box-sizing:border-box;width:100%;height:auto;max-width:100%;min-width:0;aspect-ratio:auto;object-fit:contain;background:#102137}
+.project-shot figcaption{display:block;padding:20px 24px 23px;color:#465e71;line-height:1.6}
+.project-shot figcaption strong{display:block;margin:0 0 8px;color:#183c4c;font-size:1.1rem;line-height:1.35}
+.project-shot figcaption span{display:block;max-width:75ch;font-size:.98rem;line-height:1.65}
+.project-shot-note{max-width:900px;margin:14px 0 24px;color:#526879;font-size:.89rem;line-height:1.65}
+.project-shot-followup{margin:28px 0 0}
+.project-records-demo{width:100%;max-width:960px;margin:30px auto}
+.project-shot-grid,.project-records-demo,.project-shot{overflow-wrap:anywhere}
+@media(max-width:760px){.project-shot-grid{gap:22px;margin:24px auto}.project-shot figcaption{padding:16px 18px 19px}.project-shot figcaption strong{font-size:1rem}.project-shot figcaption span{font-size:.93rem}}
