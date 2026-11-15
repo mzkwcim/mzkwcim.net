@@ -73,3 +73,6 @@
     padding-bottom: 45px;
   }
 }
+
+/* Accessible contrast for small editorial labels on light surfaces */
+.landing-eyebrow,.section-kicker,.case-card-top,.process-grid strong{color:#075653}
