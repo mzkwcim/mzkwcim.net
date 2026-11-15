@@ -6,3 +6,9 @@
 
 /assets/*
   Cache-Control: public, max-age=3600
+
+# Security hardening for the public HTTPS domain only.
+# Short HSTS max-age for safe initial rollout; no includeSubDomains or preload.
+https://mzkwcim.net/*
+  Strict-Transport-Security: max-age=86400
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
