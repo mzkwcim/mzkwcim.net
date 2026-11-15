@@ -46,3 +46,13 @@
 .project-records-demo{width:100%;max-width:960px;margin:30px auto}
 .project-shot-grid,.project-records-demo,.project-shot{overflow-wrap:anywhere}
 @media(max-width:760px){.project-shot-grid{gap:22px;margin:24px auto}.project-shot figcaption{padding:16px 18px 19px}.project-shot figcaption strong{font-size:1rem}.project-shot figcaption span{font-size:.93rem}}
+
+
+/* Editorial illustrations for specialist articles */
+.article-figure{box-sizing:border-box;max-width:850px;width:100%;margin:25px 0 30px;overflow:hidden;background:#fff;border:1px solid #d5e2e8;border-radius:14px;box-shadow:0 12px 30px rgba(19,52,69,.06)}
+.article-figure a{display:block;max-width:100%;overflow:hidden}
+.article-figure img{display:block;max-width:100%;width:100%;height:auto;object-fit:contain;background:#102137}
+.article-figure figcaption{padding:15px 19px 19px;color:#536779;font-size:.92rem;line-height:1.55}
+.article-figure figcaption strong{display:block;color:#183c4c;font-size:1rem;margin-bottom:6px}
+.article-figure figcaption span{display:block}
+@media(max-width:760px){.article-figure{margin:20px 0 24px}.article-figure figcaption{padding:14px 15px 17px}}
