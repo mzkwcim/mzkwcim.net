@@ -5,8 +5,9 @@ for(const footer of document.querySelectorAll('.footlinks')){
  for(const [href,label] of links){if(!footer.querySelector('a[href="'+href+'"]')){const a=document.createElement('a');a.href=href;a.textContent=label;if(href.startsWith('https:')){a.target='_blank';a.rel='noopener noreferrer'}footer.prepend(a)}}
 }
 
-// Load AdSense on the main website only. Existing article tags must not be duplicated.
+// Load AdSense only on blog pages. Existing article tags must not be duplicated.
 if (window.location.hostname === 'mzkwcim.net' &&
+    window.location.pathname.startsWith('/blog/') &&
     !document.querySelector('script[src*="pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"]')) {
   const adsense = document.createElement('script');
   adsense.async = true;
